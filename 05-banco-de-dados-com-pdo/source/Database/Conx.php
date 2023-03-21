@@ -43,7 +43,7 @@ class Conx
     {
 
     }
-    final private function __clone()
+    private function __clone()
     {
 
     }

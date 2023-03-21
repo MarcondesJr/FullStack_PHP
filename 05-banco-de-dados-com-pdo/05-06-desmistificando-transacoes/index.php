@@ -4,7 +4,7 @@ fullStackPHPClassName("05.06 - Desmistificando transações");
 
 require __DIR__ . "/../source/autoload.php";
 
-use Source\Database\Connect;
+use Source\Database\Conx;
 
 /*
  * [ transaction ] https://pt.wikipedia.org/wiki/Transa%C3%A7%C3%A3o_em_base_de_dados
@@ -22,3 +22,23 @@ use Source\Database\Connect;
  * persistir no banco de dados (Uma transação só tem sentido se houver gravação)
  */
 fullStackPHPClassSession("transaction", __LINE__);
+
+
+try {
+    $pdo = Conx::getInstance();
+    $pdo->beginTransaction();
+    $pdo->query("
+        INSERT INTO users (first_name, last_name, email, document)
+        VALUES ('Nunes', 'Correa', 'nunescorrea@gmail.com', '000.999.888-77')
+    ");
+    $userId = $pdo->lastInsertId();
+    $pdo->query("
+        INSERT INTO users_address (user_id, street, number, complement)
+        VALUES ('{$userId}', 'Rua projetada', '04', 'Proximo a escola estadual vasco vasques')
+    ");
+    $pdo->commit();
+    echo "<p class='trigger accept'>Cadastro com sucesso.!</p>";
+}catch (PDOException $exception){
+    $pdo->rollBack();
+    var_dump($exception);
+}
