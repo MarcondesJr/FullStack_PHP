@@ -13,7 +13,7 @@ header("Content-Type: text/html; charset=utf-8");
  * Configura o timezone da aplicação
  * Define a função para output de erros.
  */
-date_default_timezone_set("America/Manaus");
+date_default_timezone_set("America/Sao_Paulo");
 set_error_handler("fullStackPHPErrorHandler");
 
 /**
@@ -24,7 +24,9 @@ set_error_handler("fullStackPHPErrorHandler");
  */
 ini_set("display_errors", 1);
 ini_set("error_reporting", E_ALL);
-ini_set('xdebug.var_display_max_children', 3);
+ini_set('xdebug.overload_var_dump', 1);
+ini_set('xdebug.var_display_max_depth', -1);
+
 
 /**
  * [ interface ] Style, icon and logo

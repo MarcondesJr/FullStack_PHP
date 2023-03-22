@@ -7,7 +7,7 @@ use \PDOException;
 class Conx
 {
     private const HOST = "localhost";
-    private const DBNAME = "fsphp";
+    private const DBNAME = "fullstackphp";
     private const USER = "root";
     private const PASSWD = "";
 

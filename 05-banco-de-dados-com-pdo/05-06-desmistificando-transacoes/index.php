@@ -28,8 +28,8 @@ try {
     $pdo = Conx::getInstance();
     $pdo->beginTransaction();
     $pdo->query("
-        INSERT INTO users (first_name, last_name, email, document)
-        VALUES ('Nunes', 'Correa', 'nunescorrea@gmail.com', '000.999.888-77')
+        INSERT INTO users (first_name, last_name, email, document) 
+        VALUES ('Nunes', 'Correa', 'email@email.com', '000.000.000-00')
     ");
     $userId = $pdo->lastInsertId();
     $pdo->query("

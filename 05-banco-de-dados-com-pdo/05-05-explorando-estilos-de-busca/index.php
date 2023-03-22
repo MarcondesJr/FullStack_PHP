@@ -43,7 +43,6 @@ fullStackPHPClassSession("fetch save", __LINE__);
 $read = $conx->query("SELECT * FROM users LIMIT 5,2");
 $result = $read->fetchAll();
 var_dump(
-    $result,
     $result
 );
 /*

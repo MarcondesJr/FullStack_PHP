@@ -92,9 +92,9 @@ UNLOCK TABLES;
 # Dump da tabela users_address
 # ------------------------------------------------------------
 
-DROP TABLE IF EXISTS `users_address`;
+DROP TABLE IF EXISTS `address`;
 
-CREATE TABLE `users_address` (
+CREATE TABLE `address` (
   `user_id` int(11) unsigned DEFAULT NULL,
   `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
   `street` varchar(255) DEFAULT NULL,
@@ -105,10 +105,10 @@ CREATE TABLE `users_address` (
   CONSTRAINT `user_id` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE ON UPDATE NO ACTION
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
-LOCK TABLES `users_address` WRITE;
-/*!40000 ALTER TABLE `users_address` DISABLE KEYS */;
+LOCK TABLES `address` WRITE;
+/*!40000 ALTER TABLE `address` DISABLE KEYS */;
 
-INSERT INTO `users_address` (`user_id`, `id`, `street`, `number`, `complement`)
+INSERT INTO `address` (`user_id`, `id`, `street`, `number`, `complement`)
 VALUES
 	(1,51,'rua manoel pedro vieira, 810','810','casa 1'),
 	(2,52,'paraguai','2041','casa 1'),
@@ -161,7 +161,7 @@ VALUES
 	(49,99,'samambaia','96','casa 1'),
 	(50,100,'rua dos gerã¢nios','110','casa 1');
 
-/*!40000 ALTER TABLE `users_address` ENABLE KEYS */;
+/*!40000 ALTER TABLE `address` ENABLE KEYS */;
 UNLOCK TABLES;
 
 
