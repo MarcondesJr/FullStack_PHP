@@ -2,7 +2,7 @@
 
 namespace Source\Models;
 
-use Source\Database\Conx;
+use source\Database\Conx;
 
 /**
  * Class Model

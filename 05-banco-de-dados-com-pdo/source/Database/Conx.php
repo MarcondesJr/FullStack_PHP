@@ -1,9 +1,10 @@
 <?php
 
-namespace Source\Database;
+namespace source\Database;
 
-use \PDO;
-use \PDOException;
+use PDO;
+use PDOException;
+
 class Conx
 {
     private const HOST = "localhost";

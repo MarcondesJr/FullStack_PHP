@@ -450,7 +450,7 @@ class PHPMailer
     public $SingleTo = false;
 
     /**
-     * Storage for addresses when SingleTo is enabled.
+     * storage for addresses when SingleTo is enabled.
      *
      * @var array
      */

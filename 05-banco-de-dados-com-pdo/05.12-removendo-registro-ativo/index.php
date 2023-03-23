@@ -9,7 +9,7 @@ require __DIR__ . "/../source/autoload.php";
  */
 fullStackPHPClassSession("destroy", __LINE__);
 
-$model = new \Source\Models\UserModel();
+$model = new \Source\Models\User();
 $user = $model->load(34);
 if ($user){
     $user->destroy();
@@ -22,7 +22,7 @@ var_dump($user);
 fullStackPHPClassSession("model destroy", __LINE__);
 $list = $model->all(100, 30);
 if ($list) {
-    /** @var \Source\Models\UserModel $user */
+    /** @var \Source\Models\User $user */
     foreach ($list as $user) {
         var_dump($user);
         $user->destroy();

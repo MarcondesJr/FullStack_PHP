@@ -49,7 +49,7 @@ fullStackPHPClassSession("conexão com singleton", __LINE__);
 
 require __DIR__ . "/../source/autoload.php";
 
-use Source\Database\Conx;
+use source\Database\Conx;
 
 $pdo1 = Conx::getInstance();
 $pdo2 = Conx::getInstance();

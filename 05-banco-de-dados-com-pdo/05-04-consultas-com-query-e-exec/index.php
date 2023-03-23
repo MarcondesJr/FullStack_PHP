@@ -4,7 +4,7 @@ fullStackPHPClassName("05.04 - Consultas com query e exec");
 
 require __DIR__ . "/../source/autoload.php";
 
-use Source\Database\Conx;
+use source\Database\Conx;
 
 /*
  * [ insert ] Cadastrar dados.

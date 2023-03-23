@@ -9,7 +9,7 @@ require __DIR__ . "/../source/autoload.php";
  * essa é uma layer supertype.
  */
 fullStackPHPClassSession("layer", __LINE__);
-$layer = new ReflectionClass(\Source\Models\Model::class);
+$layer = new ReflectionClass(\Model::class);
 
 var_dump(
     $layer->getDefaultProperties(),
@@ -22,7 +22,7 @@ var_dump(
  */
 fullStackPHPClassSession("model", __LINE__);
 
-$model = new \Source\Models\UserModel();
+$model = new \Source\Models\User();
 
 var_dump(
     $model,

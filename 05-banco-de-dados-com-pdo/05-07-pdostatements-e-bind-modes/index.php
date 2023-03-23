@@ -4,7 +4,7 @@ fullStackPHPClassName("05.07 - PDOStatement e bind modes");
 
 require __DIR__ . "/../source/autoload.php";
 
-use Source\Database\Conx;
+use source\Database\Conx;
 
 /**
  * [ prepare ] http://php.net/manual/pt_BR/pdo.prepare.php
