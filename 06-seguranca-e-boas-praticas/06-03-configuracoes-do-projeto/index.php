@@ -20,7 +20,8 @@ use Source\Core\Conx;
 $read = Conx::getInstance()->prepare("SELECT * FROM users LIMIT 1,1");
 $read->execute();
 var_dump($read->fetchAll());
+
 use Source\Models\User;
 
-$user = (new User())->load(1);
+$user = (new User())->load(7);
 var_dump($user);

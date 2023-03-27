@@ -10,7 +10,7 @@ define("CONF_DB_NAME", "fullstackphp");
 /**
  * Project URL's
  */
-define("CONF_URL_BASE", "http://localhost:8888/fsphp");
+define("CONF_URL_BASE", "http://localhost:8888/Fullstack_PHP");
 define("CONF_URL_ADMIN", CONF_URL_BASE . "/admin");
 define("CONF_URL_ERROR", CONF_URL_BASE . "/404");
 
@@ -23,4 +23,4 @@ define("CONF_DATE_APP", "Y-m-d H:i:s");
 /**
  * SESSION
  */
-define("CONF_SES_PATH", __DIR__ . "/../../storage/session");
+define("CONF_SES_PATH", __DIR__ . "/../../storage/sessions/");

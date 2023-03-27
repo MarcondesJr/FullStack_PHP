@@ -12,7 +12,7 @@ class Session
      */
     public function __construct()
     {
-        if(!session_id()) {
+        if (!session_id()){
             session_save_path(CONF_SES_PATH);
             session_start();
         }
@@ -49,7 +49,7 @@ class Session
 
     /**
      * @param string $key
-     * @param mixed $value
+     * @param $value
      * @return $this
      */
     public function set(string $key, $value): Session
@@ -60,6 +60,7 @@ class Session
 
     /**
      * @param string $key
+     * @param mixed $value
      * @return $this
      */
     public function unset(string $key): Session
@@ -78,7 +79,7 @@ class Session
     }
 
     /**
-     * @return $this
+     * @return Session
      */
     public function regenerate(): Session
     {
