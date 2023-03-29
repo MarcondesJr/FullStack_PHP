@@ -19,7 +19,7 @@ function is_email(string $email): bool
  * @param string $password
  * @return bool
  */
-function is_password(string $password): bool
+function is_passwd(string $password): bool
 {
     return (mb_strlen($password) >= CONF_PASSWD_MIN_LEN && mb_strlen($password) <= CONF_PASSWD_MAX_LEN ? true : false);
 }

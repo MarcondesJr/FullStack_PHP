@@ -101,6 +101,18 @@ class User extends Model
             $this->message->warning("Nome, sobrenome, email e senha são obrigatórios.!");
             return null;
         }
+        if (!is_email($this->email)){
+            $this->message->warning("O email '{$this->email}' não tem um formato válido. Tente novamente!");
+            return null;
+        }
+        if (!is_passwd($this->password)){
+            $min = CONF_PASSWD_MIN_LEN;
+            $max = CONF_PASSWD_MAX_LEN;
+            $this->message->warning("A senha precisa ter entre {$min} e {$max} caracteres. Favor tente novamente!");
+            return null;
+        }else{
+            $this->password = passwd($this->password);
+        }
 
         /** User Update */
         if (!empty($this->id)) {
