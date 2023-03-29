@@ -41,3 +41,30 @@ define("CONF_MESSAGE_INFO", "info");
 define("CONF_MESSAGE_SUCCESS", "success");
 define("CONF_MESSAGE_WARNING", "warning");
 define("CONF_MESSAGE_ERROR", "error");
+
+/**
+ * MAIL
+ */
+define("CONF_MAIL_HOST", "smtp.sendgrid.net");
+define("CONF_MAIL_PORT", "587");
+define("CONF_MAIL_USER", "apikey");
+define("CONF_MAIL_PASS", "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");
+define("CONF_MAIL_SENDER", ["name" => "Marcondes Junior", "address" => "marcondestecinfo@gmail.com"]);
+
+define("CONF_MAIL_OPTION_LANG", "br");
+define("CONF_MAIL_OPTION_HTML", true);
+define("CONF_MAIL_OPTION_AUTH", true);
+define("CONF_MAIL_OPTION_SECURE", "tls");
+define("CONF_MAIL_OPTION_CHARSET", "utf-8");
+
+
+
+
+
+
+
+
+
+
+
+
