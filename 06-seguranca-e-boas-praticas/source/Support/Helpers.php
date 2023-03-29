@@ -1,6 +1,15 @@
 <?php
 
 /**
+ * @param string $email
+ * @return string
+ */
+function is_email(string $email): string
+{
+    return filter_var($email, FILTER_VALIDATE_EMAIL);
+}
+
+/**
  * ##################
  * ###   STRING   ###
  * ##################
@@ -27,21 +36,42 @@ function str_slug (string $string): string
     );
     return htmlspecialchars($slug);
 }
+
+/**
+ * @param string $string
+ * @return string
+ */
 function str_studly_case(string $string): string
 {
     $string = str_slug($string);
     $studlyCase = str_replace(" ", "", mb_convert_case(str_replace("-", " ", $string), MB_CASE_TITLE));
     return $studlyCase;
 }
+
+/**
+ * @param string $string
+ * @return string
+ */
 function str_camel_case(string $string): string
 {
     return lcfirst(str_studly_case($string));
 }
 
+/**
+ * @param string $string
+ * @return string
+ */
 function str_title(string $string): string
 {
     return mb_convert_case(filter_var($string, FILTER_SANITIZE_SPECIAL_CHARS), MB_CASE_TITLE);
 }
+
+/**
+ * @param string $string
+ * @param int $limit
+ * @param string $pointer
+ * @return string
+ */
 function str_limit_words(string $string, int $limit, string $pointer = " ...[leia mais]"): string
 {
     $string = trim(filter_var($string, FILTER_SANITIZE_SPECIAL_CHARS));
@@ -55,6 +85,12 @@ function str_limit_words(string $string, int $limit, string $pointer = " ...[lei
     return "{$words}{$pointer}";
 }
 
+/**
+ * @param string $string
+ * @param int $limit
+ * @param string $pointer
+ * @return string
+ */
 function str_limits_chars(string $string, int $limit, string $pointer = " ...[leia mais]"): string
 {
     $string = trim(filter_var($string, FILTER_SANITIZE_SPECIAL_CHARS));
