@@ -10,7 +10,7 @@ define("CONF_DB_NAME", "fullstackphp");
 /**
  * Project URL's
  */
-define("CONF_URL_BASE", "http://localhost:8888/Fullstack_PHP/06-seguranca-e-boas-praticas/06-08-camada-de-manipulacao-pt3");
+define("CONF_URL_BASE", "http://localhost:8888/Fullstack_PHP");
 define("CONF_URL_ADMIN", CONF_URL_BASE . "/admin");
 define("CONF_URL_ERROR", CONF_URL_BASE . "/404");
 
