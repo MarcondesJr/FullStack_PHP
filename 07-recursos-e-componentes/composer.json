@@ -1,0 +1,26 @@
+{
+  "name": "marcondesjr/fullstackphp",
+  "description": "Formação Fullstack PHP Developer",
+  "minimum-stability": "stable",
+  "authors": [
+    {
+      "name": "Marcondes N. C. Junior",
+      "email": "marcondestecinfo@gmail.com",
+      "role": "Developer"
+    }
+  ],
+  "config": {
+    "vendor-dir": "vendor"
+  },
+  "autoload": {
+    "psr-4": {
+      "Source\\": "source/"
+    },
+    "files": [
+      "source/Support/Config.php",
+      "source/Support/Helpers.php"
+    ]
+  },
+  "require": {
+  }
+}
