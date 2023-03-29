@@ -1,12 +1,55 @@
 <?php
+/**
+ * ##################
+ * ###  VALIDATE  ###
+ * ##################
+ */
+
 
 /**
  * @param string $email
- * @return string
+ * @return bool
  */
-function is_email(string $email): string
+function is_email(string $email): bool
 {
     return filter_var($email, FILTER_VALIDATE_EMAIL);
+}
+
+/**
+ * @param string $password
+ * @return bool
+ */
+function is_password(string $password): bool
+{
+    return (mb_strlen($password) >= CONF_PASSWD_MIN_LEN && mb_strlen($password) <= CONF_PASSWD_MAX_LEN ? true : false);
+}
+
+/**
+ * @param string $password
+ * @return string
+ */
+function passwd(string $password): string
+{
+    return password_hash($password, CONF_PASSWD_ALGO, CONF_PASSWD_OPTION);
+}
+
+/**
+ * @param string $password
+ * @param string $hash
+ * @return bool
+ */
+function passwd_verify(string $password, string $hash): bool
+{
+    return password_verify($password, $hash);
+}
+
+/**
+ * @param string $hash
+ * @return bool
+ */
+function passwd_rehash(string $hash): bool
+{
+    return password_needs_rehash($hash, CONF_PASSWD_ALGO, CONF_PASSWD_OPTION);
 }
 
 /**
@@ -99,4 +142,81 @@ function str_limits_chars(string $string, int $limit, string $pointer = " ...[le
     }
     $chars = mb_substr($string, 0, mb_strrpos(mb_substr($string, 0, $limit), " "));
     return "{$chars}{$pointer}";
+}
+
+/**
+ * #################
+ * ###    URL    ###
+ * #################
+ */
+
+/**
+ * @param string $url
+ * @return string
+ */
+function url(string $path): string
+{
+    return CONF_URL_BASE . "/" . ($path[0] == "/" ? mb_substr($path, 1) : $path);
+}
+
+/**
+ * @param string $url
+ * @return void
+ */
+function redirect(string $url): void
+{
+    header("HTTP/1.1 302 Redirect");
+    if (filter_var($url, FILTER_VALIDATE_URL)){
+        header("Location: {$url}");
+        exit;
+    }
+    $location = url($url);
+    header("Location: {$location}");
+    exit;
+}
+
+/**
+ * ################
+ * ###   CORE   ###
+ * ################
+ */
+
+
+/**
+ * @return PDO
+ */
+function db(): PDO
+{
+    return \source\Database\Conx::getInstance();
+}
+
+/**
+ * @return \Source\Core\Message
+ */
+function message(): \Source\Core\Message
+{
+    return new \Source\Core\Message();
+}
+
+/**
+ * @return \Source\Core\Session
+ */
+function session(): \Source\Core\Session
+{
+    return new \Source\Core\Session();
+}
+
+/**
+ * ###############
+ * ###  MODEL  ###
+ * ###############
+ */
+
+
+/**
+ * @return \Source\Models\User
+ */
+function user(): \Source\Models\User
+{
+    return new \Source\Models\User();
 }
