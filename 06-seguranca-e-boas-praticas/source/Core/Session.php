@@ -36,7 +36,7 @@ class Session
      */
     public function __isset(string $name): bool
     {
-        $this->has($name);
+        return $this->has($name);
     }
 
     /**
@@ -107,5 +107,13 @@ class Session
             return $flash;
         }
         return null;
+    }
+
+    /**
+     * CSRF Token
+     */
+    public function csrf(): void
+    {
+        $_SESSION['csrf_token'] = base64_encode(random_bytes(20));
     }
 }
