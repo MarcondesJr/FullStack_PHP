@@ -8,6 +8,22 @@ define("CONF_DB_PASS", "");
 define("CONF_DB_NAME", "fullstackphp");
 
 /**
+ * SITE
+ */
+define("CONF_SITE_NAME", "UpInside");
+define("CONF_SITE_LANG", "pt_BR");
+define("CONF_SITE_DOMAIN", "upinside.com.br");
+
+/**
+ * SOCIAL
+ */
+define("CONF_SOCIAL_TWITTER_CREATOR", "");
+define("CONF_SOCIAL_TWITTER_PUBLISHER", "");
+define("CONF_SOCIAL_FACEBOOK_APP", "");
+define("CONF_SOCIAL_FACEBOOK_PAGE", "");
+define("CONF_SOCIAL_FACEBOOK_AUTHOR", "");
+
+/**
  * PROJECT URLs
  */
 define("CONF_URL_BASE", "https://www.localhost/fsphp/06-seguranca-e-boas-praticas/06-08-camada-de-manipulacao-pt3");

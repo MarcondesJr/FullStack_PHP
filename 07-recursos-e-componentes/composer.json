@@ -24,6 +24,9 @@
   "require": {
     "phpmailer/phpmailer": "^6.8.0",
     "league/plates" : "v3.5.0",
-    "coffeecode/uploader": "2.0.*"
+    "coffeecode/uploader": "2.0.*",
+    "coffeecode/cropper": "2.0.*",
+    "coffeecode/optimizer": "2.1.*",
+    "coffeecode/paginator": "2.0.*"
   }
 }

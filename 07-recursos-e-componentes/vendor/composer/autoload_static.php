@@ -12,6 +12,10 @@ class ComposerStaticInit40dba26fee0805ed7c9b84692ca36f13
     );
 
     public static $prefixLengthsPsr4 = array (
+        'W' => 
+        array (
+            'WebPConvert\\' => 12,
+        ),
         'S' => 
         array (
             'Source\\' => 7,
@@ -24,13 +28,24 @@ class ComposerStaticInit40dba26fee0805ed7c9b84692ca36f13
         array (
             'League\\Plates\\' => 14,
         ),
+        'I' => 
+        array (
+            'ImageMimeTypeGuesser\\' => 21,
+        ),
         'C' => 
         array (
             'CoffeeCode\\Uploader\\' => 20,
+            'CoffeeCode\\Paginator\\' => 21,
+            'CoffeeCode\\Optimizer\\' => 21,
+            'CoffeeCode\\Cropper\\' => 19,
         ),
     );
 
     public static $prefixDirsPsr4 = array (
+        'WebPConvert\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/rosell-dk/webp-convert/src',
+        ),
         'Source\\' => 
         array (
             0 => __DIR__ . '/../..' . '/source',
@@ -43,9 +58,25 @@ class ComposerStaticInit40dba26fee0805ed7c9b84692ca36f13
         array (
             0 => __DIR__ . '/..' . '/league/plates/src',
         ),
+        'ImageMimeTypeGuesser\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/rosell-dk/image-mime-type-guesser/src',
+        ),
         'CoffeeCode\\Uploader\\' => 
         array (
             0 => __DIR__ . '/..' . '/coffeecode/uploader/src',
+        ),
+        'CoffeeCode\\Paginator\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/coffeecode/paginator/src',
+        ),
+        'CoffeeCode\\Optimizer\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/coffeecode/optimizer/src',
+        ),
+        'CoffeeCode\\Cropper\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/coffeecode/cropper/src',
         ),
     );
 
