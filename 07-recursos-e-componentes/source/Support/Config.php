@@ -48,8 +48,8 @@ define("CONF_MESSAGE_ERROR", "error");
 define("CONF_MAIL_HOST", "smtp.sendgrid.net");
 define("CONF_MAIL_PORT", "587");
 define("CONF_MAIL_USER", "apikey");
-define("CONF_MAIL_PASS", "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");
-define("CONF_MAIL_SENDER", ["name" => "Marcondes Junior", "address" => "marcondestecinfo@gmail.com"]);
+define("CONF_MAIL_PASS", "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");
+define("CONF_MAIL_SENDER", ["name" => "Marcondes Junior", "address" => "marcondes.junior@vat.com.br"]);
 
 define("CONF_MAIL_OPTION_LANG", "br");
 define("CONF_MAIL_OPTION_HTML", true);

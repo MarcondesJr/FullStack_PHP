@@ -11,8 +11,15 @@ fullStackPHPClassSession("synthesize", __LINE__);
 $email = (new \Source\Core\Email())->bootstrap(
     "Olá mundo! Esse é meu email PDO",
     "<h1>ola Mundo</h1><p>Essa é uma mensagem via rotina da aplicação em PDO.!</p>",
-    "mncj.bonno1992@gmail.com",
-    "Marcondes Nunes Correa Junior"
+    "marcondestecinfo@gmail.com",
+    "Marcondes Junior"
 );
 
-var_dump($email);
+$email->attach(__DIR__ . "/../../apple-tv-256.png", "AppleTV+");
+$email->attach(__DIR__ . "/../../mariadb-256.png", "Maria DB");
+
+if ($email->send()){
+    echo message()->success("E-mail enviado com sucesso!");
+}else {
+    echo $email->message();
+}

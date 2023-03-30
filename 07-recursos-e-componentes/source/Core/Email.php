@@ -10,17 +10,14 @@ use PHPMailer\PHPMailer\Exception;
  */
 class Email
 {
+    /** @var array */
+    private $data;
+    /** @var PHPMailer */
+    private $mail;
+    /** @var Message */
+    private $message;
 
-    /**
-     * @param array $data
-     * @param PHPMailer $mail
-     * @param Message $message
-     */
-    public function __construct(
-        private array $data,
-        private PHPMailer $mail,
-        private Message $message
-    )
+    public function __construct()
     {
         $this->mail = new PHPMailer(true);
         $this->message = new Message();
@@ -58,6 +55,13 @@ class Email
         $this->data->message = $message;
         $this->data->toEmail = $toEmail;
         $this->data->toName = $toName;
+        return $this;
+    }
+
+    public function attach(string $filePath, string $fileName): Email
+    {
+        $this->data->attach[$filePath] = $fileName;
+        return $this;
     }
 
     /**
@@ -65,9 +69,9 @@ class Email
      * @param $fromName
      * @return bool
      */
-    public function send($fromEmail = CONF_MAIL_SENDER['address'], $fromName = CONF_MAIL_SENDER["name"]): bool
+    public function send($fromEmail = CONF_MAIL_SENDER['address'], $fromName = CONF_MAIL_SENDER['name']): bool
     {
-        if (!empty($this->data)){
+        if (empty($this->data)){
             $this->message->error("Erro ao enviar, favor verificar os dados.!!");
             return false;
         }
@@ -84,6 +88,12 @@ class Email
             $this->mail->msgHTML($this->data->message);
             $this->mail->addAddress($this->data->toEmail, $this->data->toName);
             $this->mail->setFrom($fromEmail, $fromName);
+
+            if (!empty($this->data->attach)){
+                foreach ($this->data->attach as $path => $name){
+                    $this->mail->addAttachment($path, $name);
+                }
+            }
 
             $this->mail->send();
             return true;
