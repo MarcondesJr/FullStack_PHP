@@ -3,13 +3,22 @@
         'name' => 'marcondesjr/fullstackphp',
         'pretty_version' => 'dev-main',
         'version' => 'dev-main',
-        'reference' => '7d5f22637a9968ac955eb8def0d5f612390c335d',
+        'reference' => '4010b5895b5c9074705f6816bb4e06a30b26d0b1',
         'type' => 'library',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
         'dev' => true,
     ),
     'versions' => array(
+        'coffeecode/uploader' => array(
+            'pretty_version' => '2.0.4',
+            'version' => '2.0.4.0',
+            'reference' => '4601ff1665a4591087c524239c1e545ba4834453',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../coffeecode/uploader',
+            'aliases' => array(),
+            'dev_requirement' => false,
+        ),
         'league/plates' => array(
             'pretty_version' => 'v3.5.0',
             'version' => '3.5.0.0',
@@ -22,7 +31,7 @@
         'marcondesjr/fullstackphp' => array(
             'pretty_version' => 'dev-main',
             'version' => 'dev-main',
-            'reference' => '7d5f22637a9968ac955eb8def0d5f612390c335d',
+            'reference' => '4010b5895b5c9074705f6816bb4e06a30b26d0b1',
             'type' => 'library',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
